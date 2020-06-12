@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style media="screen">
+    html {
+      font-size: 100%;
+    }
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 50%;
+    }
+
+    </style>
+    <title>Maruki Takashi Portfolio</title>
+</head>
+<body>
+    <h1>丸木駿のポートフォリオ</h1>
+    <h2>自己紹介</h2>
+    <h3>横浜国立大学　経済学部経済学科在学中<h3>
+    <h3>所属ゼミナール　熊野ゼミナール<h3>
+    <h3>研究内容:</h3>
+    <p>私が所属するゼミナールはマーケットデザインを研究しています。<br><br>
+       マーケットデザインとは?</br>
+       マーケットデザインは従来の経済学とは全く異なる手法で世の中にとってよいことを突き詰める学問です。<br>
+       従来の経済学は決められたルールに従って社会を分析するのに対しマーケットデザインはどのようなルール
+       が社会にとって良い結果になるのかを研究する学問です。<br>
+       そして、マーケットデザインの考え方がよく応用されている分野はオークションとマッチングです。<br>
+       オークションやマッチングのどのようなアルゴリズムが社会にとって良い結果をもたらすのかを中心に
+       私が所属するゼミは活動しています。</p><br><br>
+    <h2>成果物</h2>
+    <h3>web scrapingをGoの並行処理を用いて高速化</h3>
+    まずは並行処理を用いずにweb scrapingをした結果です。<br>
+    処理は以下のようになっています。<br>
+    1. yahooの画像検索のURLのquery文字列に検索したいキーワード(ターミナルの標準入力)を組み込みます。<br>
+    2. 作成したURLのHTMLのimgタグのsrc属性をすべて取得します。<br>
+    3.取得したsrc属性の値をcsvファイルに出力します。<br>
+    <a href="https://github.com/mcfc0129/Go-Webscraping">実際のコード</a>
+    以下の画像は上記の処理のベンチマークの結果です。<br>
+    <img src="https://user-images.githubusercontent.com/63897194/84460479-fc8e0000-aca4-11ea-9a5d-03ea053f4308.jpg">
+    <br><br><br>
+    次に、上記の処理の2と3をchanを用いて並行処理しました。<br>
+    2の処理で取得したsrcの値をchanで3に送り、2と3を同時に処理をしています。
+    <a href="https://github.com/mcfc0129/Go-WebScraping-with-concurrency">実際のコード</a>
+    以下の画像はのベンチマークの結果です。<br>
+    <img src="https://user-images.githubusercontent.com/63897194/84460369-b769ce00-aca4-11ea-9d3f-31f7a2d0d5b7.jpg"><br>
+    処理のスピードが4秒ほど実際に短くなりパフォーマンスが上昇しました!!
+</body>
+</html>
