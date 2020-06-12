@@ -39,13 +39,13 @@
     1. yahooの画像検索のURLのquery文字列に検索したいキーワード(ターミナルの標準入力)を組み込みます。<br>
     2. 作成したURLのHTMLのimgタグのsrc属性をすべて取得します。<br>
     3.取得したsrc属性の値をcsvファイルに出力します。<br>
-    <a href="https://github.com/mcfc0129/Go-Webscraping">実際のコード</a>
+    <a href="https://github.com/mcfc0129/Go-Webscraping">実際のコード</a><br>
     以下の画像は上記の処理のベンチマークの結果です。<br>
     <img src="https://user-images.githubusercontent.com/63897194/84460479-fc8e0000-aca4-11ea-9a5d-03ea053f4308.jpg">
     <br><br><br>
-    次に、上記の処理の2と3をchanを用いて並行処理しました。<br>
-    2の処理で取得したsrcの値をchanで3に送り、2と3を同時に処理をしています。
-    <a href="https://github.com/mcfc0129/Go-WebScraping-with-concurrency">実際のコード</a>
+    次に、上記の処理の1,2,3をchanを用いて並行処理しました。<br>
+    1の処理で作成したURLを2に送り2の処理で取得したsrcの値をchanで3に送る処理です。<br>
+    <a href="https://github.com/mcfc0129/Go-WebScraping-with-concurrency">実際のコード</a><br>
     以下の画像はのベンチマークの結果です。<br>
     <img src="https://user-images.githubusercontent.com/63897194/84460369-b769ce00-aca4-11ea-9d3f-31f7a2d0d5b7.jpg"><br>
     処理のスピードが4秒ほど実際に短くなりパフォーマンスが上昇しました!!
